@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.2.3'
 
 gem 'devise'
+gem 'bootstrap-sass', '~> 2.0'
 gem 'dynamic_form'
 gem 'haml-rails'
 gem 'jquery-rails'
