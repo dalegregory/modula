@@ -214,6 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 2.0)
   capybara
   coffee-rails (~> 3.2.1)
   cover_me
