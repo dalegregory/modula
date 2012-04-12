@@ -1,0 +1,12 @@
+require 'hirb'
+require 'active_support'
+
+ActiveSupport.on_load :active_record do
+  Hirb::Helpers::Table.filter_classes.merge!({ ActiveSupport::TimeWithZone => :words_ago, Time => :words_ago })
+  Hirb.enable
+end
+
+old_print = Pry.config.print
+Pry.config.print = proc do |output, value|
+  Hirb::View.view_or_page_output(value) || old_print.call(output, value)
+end
