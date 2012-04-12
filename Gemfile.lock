@@ -1,5 +1,23 @@
+GIT
+  remote: git://github.com/sferik/rails_admin.git
+  revision: 66c81e1b2ea08fcd7b4dcf9028f4c4f443d3aa7c
+  specs:
+    rails_admin (0.0.1)
+      bbenezech-nested_form (~> 0.0.6)
+      bootstrap-sass (~> 2.0)
+      builder (~> 3.0)
+      coffee-rails (~> 3.1)
+      haml (~> 3.1)
+      jquery-rails (>= 1.0)
+      jquery-ui-rails (~> 0.2.2)
+      kaminari (~> 0.12)
+      rack-pjax (~> 0.5)
+      rails (~> 3.1)
+      remotipart (~> 1.0)
+      sass-rails (~> 3.1)
+
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.3)
       actionpack (= 3.2.3)
@@ -30,7 +48,9 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.7)
     arel (3.0.2)
+    bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.2)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -41,6 +61,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.1)
       ffi (~> 1.0.6)
+    coderay (1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -48,15 +69,26 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.1)
+    configatron (2.9.0)
+      yamler (>= 0.1.0)
+    cover_me (1.2.0)
+      configatron
+      hashie
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
       warden (~> 1.1.1)
     diff-lcs (1.1.3)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    factory_girl (3.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (3.1.0)
+      factory_girl (~> 3.1.0)
+      railties (>= 3.0.0)
     ffi (1.0.11)
     haml (3.1.4)
     haml-rails (0.3.4)
@@ -64,28 +96,50 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    hashie (1.2.0)
     hike (1.2.1)
+    hirb (0.6.2)
+    hpricot (0.8.6)
     i18n (0.6.0)
     journey (1.0.3)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
+    jquery-ui-rails (0.2.2)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.6.6)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
     libwebsocket (0.1.3)
       addressable
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.7.1)
     mime-types (1.18)
     multi_json (1.2.0)
     mysql2 (0.3.11)
     nokogiri (1.5.2)
     orm_adapter (0.0.7)
     polyglot (0.3.3)
+    pry (0.9.8.4)
+      coderay (~> 1.0.5)
+      method_source (~> 0.7.1)
+      slop (>= 2.4.4, < 3)
+    pry-nav (0.2.0)
+      pry (~> 0.9.8.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-pjax (0.5.9)
+      hpricot (~> 0.8.6)
+      rack (~> 1.3)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -108,6 +162,8 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.1.1)
+    remotipart (1.0.2)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
       rspec-expectations (~> 2.9.0)
@@ -133,10 +189,12 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    slop (2.4.4)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    syntax (1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -150,6 +208,7 @@ GEM
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    yamler (0.1.0)
 
 PLATFORMS
   ruby
@@ -157,12 +216,21 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
+  cover_me
   devise
-  haml (>= 3.0.0)
+  dynamic_form
+  factory_girl_rails
   haml-rails
+  hirb
   jquery-rails
+  launchy
   mysql2
-  rails (= 3.2.3)
-  rspec-rails (>= 2.0.1)
+  pry
+  pry-nav
+  rails (~> 3.2.3)
+  rails_admin!
+  redcarpet
+  rspec-rails
   sass-rails (~> 3.2.3)
+  syntax
   uglifier (>= 1.0.3)
