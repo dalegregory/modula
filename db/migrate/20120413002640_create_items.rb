@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :code,        limit: 50,  null: false
       t.string :description, limit: 100
       t.string :error
+      t.string :operation,   limit: 1,                default: 'I'
 
       t.timestamps
     end

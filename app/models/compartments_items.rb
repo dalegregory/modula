@@ -6,9 +6,11 @@ class CompartmentsItems < ActiveRecord::Base
                   :error,
                   :height,
                   :item_code,
+                  :operation,
                   :quantity_limit
 
   validates :compartment_type, presence: true
   validates :item_code,        presence: true
+  validates :operation,        inclusion: { in: Modula::OPERATIONS }
 
 end

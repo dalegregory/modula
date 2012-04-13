@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(:version => 20120413004841) do
   add_index "compartments_items", ["item_code"], :name => "index_compartments_items_on_item_code"
 
   create_table "items", :force => true do |t|
-    t.string   "code",        :limit => 50,  :null => false
+    t.string   "code",        :limit => 50,                   :null => false
     t.string   "description", :limit => 100
     t.string   "error"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "operation",   :limit => 1,   :default => "I"
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   add_index "items", ["code"], :name => "index_items_on_code"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120413004841) do
     t.string   "item_code",          :limit => 50
     t.string   "notes",              :limit => 100
     t.string   "order_name",         :limit => 20
+    t.string   "order_type",         :limit => 20
     t.string   "sub_code_a",         :limit => 50
     t.string   "sub_code_b",         :limit => 50
     t.text     "error"

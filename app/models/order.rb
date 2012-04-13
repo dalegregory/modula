@@ -10,8 +10,9 @@ class Order < ActiveRecord::Base
   has_many :items, class_name: 'OrderItem'
   accepts_nested_attributes_for :items
 
-  validates :name,    presence: true
-  validates :command, inclusion: { in: Modula::COMMANDS }
+  validates :name,      presence: true
+  validates :command,   inclusion: { in: Modula::COMMANDS }
+  validates :operation, inclusion: { in: Modula::OPERATIONS }
 
   def self.store! attrs
     order = Order.new attrs
