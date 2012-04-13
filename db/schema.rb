@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412225630) do
+ActiveRecord::Schema.define(:version => 20120413002640) do
+
+  create_table "items", :force => true do |t|
+    t.string   "code",        :limit => 50,  :null => false
+    t.string   "description", :limit => 100
+    t.string   "error"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "items", ["code"], :name => "index_items_on_code"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.integer  "item"
