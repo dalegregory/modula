@@ -1,0 +1,17 @@
+{
+  "order": {
+    "description": "Product Receive",
+    "items_attributes": [
+      {
+        "compartment_type": "type a",
+        "description": "Product A",
+        "item_code": "00000001",
+        "notes": "Expires 1/1/2012",
+        "quantity_requested": "10",
+        "sub_code_a": "metadata #1",
+        "sub_code_b": "metadata #2"
+      }
+    ],
+    "name": "some order"
+  }
+}
