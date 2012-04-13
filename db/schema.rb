@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413004203) do
+ActiveRecord::Schema.define(:version => 20120413004841) do
 
   create_table "compartments_items", :force => true do |t|
     t.decimal  "capacity",                        :precision => 10, :scale => 0
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(:version => 20120413004203) do
   end
 
   add_index "items", ["code"], :name => "index_items_on_code"
+
+  create_table "order_items", :force => true do |t|
+    t.decimal  "quantity_requested",                :precision => 10, :scale => 0
+    t.string   "item_code",          :limit => 50
+    t.string   "notes",              :limit => 100
+    t.string   "order_name",         :limit => 20
+    t.string   "sub_code_a",         :limit => 50
+    t.string   "sub_code_b",         :limit => 50
+    t.text     "error"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
+  end
+
+  add_index "order_items", ["item_code"], :name => "index_order_items_on_item_code"
+  add_index "order_items", ["order_name"], :name => "index_order_items_on_order_name"
 
   create_table "orders", :force => true do |t|
     t.boolean  "suspended",                 :default => false
