@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413003642) do
+ActiveRecord::Schema.define(:version => 20120413004203) do
 
   create_table "compartments_items", :force => true do |t|
     t.decimal  "capacity",                        :precision => 10, :scale => 0
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(:version => 20120413003642) do
   end
 
   add_index "items", ["code"], :name => "index_items_on_code"
+
+  create_table "orders", :force => true do |t|
+    t.boolean  "suspended",                 :default => false
+    t.string   "command",     :limit => 5
+    t.string   "description", :limit => 50
+    t.string   "name",        :limit => 20,                    :null => false
+    t.string   "operation",   :limit => 1,  :default => "I"
+    t.text     "error"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  add_index "orders", ["name"], :name => "index_orders_on_name"
+  add_index "orders", ["operation"], :name => "index_orders_on_operation"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.integer  "item"
