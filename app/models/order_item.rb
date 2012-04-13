@@ -15,11 +15,18 @@ class OrderItem < ActiveRecord::Base
   belongs_to :order
 
   before_save :send_item_to_modula
+  before_save :send_compartment_to_modula
+
 private
 
   # ensure modula is aware of this item
   def send_item_to_modula
     Item.where(code: item_code).first_or_create(description: description)
+  end
+
+  # let modula know where to store this item
+  def send_compartment_to_modula
+    CompartmentsItems.where(item_code: item_code).first_or_create(compartment_type: compartment_type)
   end
 
 end

@@ -13,4 +13,8 @@ describe 'Storing Items' do
     Item.count.should == 1
   end
 
+  it 'creates a CompartmentsItems' do
+    CompartmentsItems.count.should == 1
+  end
+
 end
