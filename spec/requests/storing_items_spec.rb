@@ -52,7 +52,7 @@ describe 'Storing Items' do
     subject { OrderItem.first }
     its(:item_code)          { should == item_attrs['item_code'] }
     its(:notes)              { should == item_attrs['notes'] }
-    its(:order_name)         { should == item_attrs['order_name'] }
+    its(:order_name)         { should == @json['order']['name'] }
     its(:quantity_requested) { should == item_attrs['quantity_requested'].to_i }
     its(:sub_code_a)         { should == item_attrs['sub_code_a'] }
     its(:sub_code_b)         { should == item_attrs['sub_code_b'] }

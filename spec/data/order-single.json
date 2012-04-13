@@ -1,5 +1,6 @@
 {
   "order": {
+    "command": "P",
     "description": "Product Receive",
     "items_attributes": [
       {

@@ -8,6 +8,7 @@ class CreateOrderItems < ActiveRecord::Migration
       t.string  :item_code,          limit: 50
       t.string  :notes,              limit: 100
       t.string  :order_name,         limit: 20
+      t.string  :order_type,         limit: 20
       t.string  :sub_code_a,         limit: 50
       t.string  :sub_code_b,         limit: 50
       t.text    :error

@@ -8,11 +8,18 @@ class OrderItem < ActiveRecord::Base
                   :item_code,
                   :notes,
                   :order_name,
+                  :order_type,
                   :quantity_requested,
                   :sub_code_a,
                   :sub_code_b
 
   belongs_to :order
+
+  validates :item_code,          presence: true
+  validates :order_name,         presence: true
+  validates :quantity_requested, presence: true
+  validates :sub_code_a,         presence: true
+  validates :sub_code_b,         presence: true
 
   before_save :send_item_to_modula
   before_save :send_compartment_to_modula

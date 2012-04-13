@@ -16,6 +16,8 @@ end
 
 module Modula
 
+  COMMANDS = %w[ P V ]
+
   class Application < Rails::Application
     config.active_record.whitelist_attributes = true
     config.assets.enabled                     = true

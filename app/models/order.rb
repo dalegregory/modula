@@ -10,9 +10,18 @@ class Order < ActiveRecord::Base
   has_many :items, class_name: 'OrderItem'
   accepts_nested_attributes_for :items
 
+  validates :name,    presence: true
+  validates :command, inclusion: { in: Modula::COMMANDS }
+
   def self.store! attrs
     order = Order.new attrs
-    order.items.each &:save! # save the order items before saving the order
+
+    # save the order items before saving the order
+    order.items.each do |item|
+      item.order_name = order.name
+      item.save!
+    end
+
     order.save!
   end
 
