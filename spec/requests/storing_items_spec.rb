@@ -17,4 +17,12 @@ describe 'Storing Items' do
     CompartmentsItems.count.should == 1
   end
 
+  it 'creates a OrderItem' do
+    OrderItem.count.should == 1
+  end
+
+  it 'creates an Order' do
+    Order.count.should == 1
+  end
+
 end

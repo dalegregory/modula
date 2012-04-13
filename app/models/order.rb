@@ -13,6 +13,7 @@ class Order < ActiveRecord::Base
   def self.store! attrs
     order = Order.new attrs
     order.items.each &:save! # save the order items before saving the order
+    order.save!
   end
 
 end
