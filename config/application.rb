@@ -16,6 +16,20 @@ end
 
 module Modula
 
+  module Commands
+    RETRIEVE = 'P'
+    STORE    = 'V'
+  end
+
+  module Operations
+    ADD    = 'A'
+    DELETE = 'D'
+    INSERT = 'I'
+  end
+
+  COMMANDS   = [ Commands::RETRIEVE, Commands::STORE ]
+  OPERATIONS = [ Operations::ADD, Operations::DELETE, Operations::INSERT ]
+
   class Application < Rails::Application
     config.active_record.whitelist_attributes = true
     config.assets.enabled                     = true
