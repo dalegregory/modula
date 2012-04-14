@@ -21,7 +21,7 @@ group :development, :test do
   gem 'hirb'
   gem 'pry'
   gem 'pry-nav'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.8.0'
 end
 
 group :test do
@@ -30,4 +30,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'syntax'
+  gem 'validation_matcher'
 end
