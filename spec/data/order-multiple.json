@@ -1,0 +1,27 @@
+{
+  "order": {
+    "command": "P",
+    "description": "Product Receive",
+    "items_attributes": [
+      {
+        "compartment_type": "type a",
+        "description": "Product A",
+        "item_code": "00000001",
+        "notes": "tasty",
+        "quantity_requested": "1000",
+        "sub_code_a": "metadata #1",
+        "sub_code_b": "metadata #2"
+      },
+      {
+        "compartment_type": "type b",
+        "description": "Product B",
+        "item_code": "00000002",
+        "notes": "smelly",
+        "quantity_requested": "2",
+        "sub_code_a": "metadata #3",
+        "sub_code_b": "metadata #4"
+      }
+    ],
+    "name": "another order"
+  }
+}
