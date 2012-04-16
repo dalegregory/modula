@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120413004841) do
 
   create_table "compartments_items", :force => true do |t|
+    t.integer  "item_id"
     t.decimal  "capacity",                        :precision => 10, :scale => 0
     t.decimal  "quantity_limit",                  :precision => 10, :scale => 0
     t.integer  "height"
