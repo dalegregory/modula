@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20120413004841) do
 
   create_table "orders", :force => true do |t|
     t.boolean  "suspended",                 :default => false
-    t.string   "command",     :limit => 5
+    t.string   "command",     :limit => 5,  :default => "P"
     t.string   "description", :limit => 50
     t.string   "name",        :limit => 20,                    :null => false
     t.string   "operation",   :limit => 1,  :default => "I"
