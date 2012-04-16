@@ -17,6 +17,11 @@ group :assets do
   gem 'uglifier',     '>= 1.0.3'
 end
 
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+end
+
 group :development, :test do
   gem 'hirb'
   gem 'pry'
