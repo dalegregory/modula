@@ -6,7 +6,7 @@ describe 'Storing Items' do
     data = data_file 'order-single.json'
     @json = JSON.parse data
 
-    post '/store', @json, :type => :json
+    post '/orders', @json, :type => :json
   end
 
   it 'creates an item' do
