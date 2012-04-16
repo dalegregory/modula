@@ -3,6 +3,9 @@
 .DS_Store
 ._*
 config/database.yml
+config/deploy.rb
+config/deploy/production.rb
+config/deploy/staging.rb
 config/github.yml
 config/stripe.yml
 coverage*
