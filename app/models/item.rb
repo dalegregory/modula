@@ -4,6 +4,9 @@ class Item < ActiveRecord::Base
                   :description,
                   :operation
 
+  has_many :compartments_items
+
   validates :code,      presence: true
   validates :operation, inclusion: { in: Modula::OPERATIONS }
+
 end
