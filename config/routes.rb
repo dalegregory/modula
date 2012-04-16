@@ -1,6 +1,6 @@
 Modula::Application.routes.draw do
 
-  post '/store' => 'orders#create'
+  resources :orders, only: [:create, :show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
