@@ -2,6 +2,8 @@ class CreateCompartmentsItems < ActiveRecord::Migration
 
   def change
     create_table :compartments_items do |t|
+      t.belongs_to :item
+
       t.decimal :capacity
       t.decimal :quantity_limit
       t.integer :height
