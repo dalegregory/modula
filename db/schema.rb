@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20120413004841) do
 
   create_table "order_items", :force => true do |t|
     t.integer  "order_id"
-    t.decimal  "quantity_requested",                :precision => 10, :scale => 0
+    t.decimal  "quantity_requested",                :precision => 11, :scale => 3
     t.string   "item_code",          :limit => 50
     t.string   "notes",              :limit => 100
     t.string   "order_name",         :limit => 20

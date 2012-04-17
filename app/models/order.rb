@@ -24,6 +24,7 @@ class Order < ActiveRecord::Base
     end
 
     order.save!
+    order
   end
 
 end

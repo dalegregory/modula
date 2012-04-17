@@ -4,7 +4,7 @@ class CreateOrderItems < ActiveRecord::Migration
     create_table :order_items do |t|
       t.belongs_to :order
 
-      t.decimal :quantity_requested
+      t.decimal :quantity_requested, precision: 11, scale: 3
       t.string  :item_code,          limit: 50
       t.string  :notes,              limit: 100
       t.string  :order_name,         limit: 20
