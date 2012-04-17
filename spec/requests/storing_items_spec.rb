@@ -6,7 +6,7 @@ describe 'Storing Items' do
     data = data_file 'order-single.json'
     @json = JSON.parse data
 
-    post '/store', @json, :type => :json
+    post '/orders', @json, { 'HTTP_ACCEPT' => 'application/json' }
   end
 
   it 'creates an item' do
@@ -23,6 +23,10 @@ describe 'Storing Items' do
 
   it 'creates an Order' do
     Order.count.should == 1
+  end
+
+  it 'returns the order as json' do
+    response.body.should == Order.first.to_json
   end
 
   describe 'the new Item' do
