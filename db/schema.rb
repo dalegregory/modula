@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120417001131) do
     t.string   "command",      :limit => 5
     t.string   "description",  :limit => 50
     t.string   "order_name",   :limit => 20
+    t.string   "status",       :limit => 5
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
   end
