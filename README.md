@@ -14,7 +14,7 @@ Usage
 
 ### Storing items
 
-Items are stored by posting json order data to `/store`. Multiple items can be included.
+Items are stored by posting json order data to `/orders`. Multiple items can be included.
 
 When an order is received, the following steps occur:
 
