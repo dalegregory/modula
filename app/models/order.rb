@@ -7,7 +7,9 @@ class Order < ActiveRecord::Base
                   :name,
                   :operation
 
-  has_many :items, class_name: 'OrderItem'
+  has_many :items,    class_name: 'OrderItem'
+  has_many :outcomes, class_name: 'OrderOutcome'
+
   accepts_nested_attributes_for :items
 
   validates :name,      presence: true
