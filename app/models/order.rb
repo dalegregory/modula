@@ -16,7 +16,7 @@ class Order < ActiveRecord::Base
   validates :command,   inclusion: { in: Modula::COMMANDS }
   validates :operation, inclusion: { in: Modula::OPERATIONS }
 
-  def self.store! attrs
+  def self.execute! attrs
     order = Order.new attrs
 
     # save the order items before saving the order
