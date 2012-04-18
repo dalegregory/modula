@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413004841) do
+ActiveRecord::Schema.define(:version => 20120417001131) do
 
   create_table "compartments_items", :force => true do |t|
     t.integer  "item_id"
@@ -58,6 +58,32 @@ ActiveRecord::Schema.define(:version => 20120413004841) do
   add_index "order_items", ["item_code"], :name => "index_order_items_on_item_code"
   add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
   add_index "order_items", ["order_name"], :name => "index_order_items_on_order_name"
+
+  create_table "order_outcome_items", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "outcome_id"
+    t.integer  "quantity_requested"
+    t.string   "item_code"
+    t.string   "notes"
+    t.string   "order_name"
+    t.string   "quantity_executed"
+    t.string   "sub_code_a"
+    t.string   "sub_code_b"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "order_outcomes", :force => true do |t|
+    t.integer  "order_id"
+    t.boolean  "delete_order",               :default => false
+    t.integer  "store_number"
+    t.string   "command",      :limit => 5
+    t.string   "description",  :limit => 50
+    t.string   "order_name",   :limit => 20
+    t.string   "status",       :limit => 5
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
 
   create_table "orders", :force => true do |t|
     t.boolean  "suspended",                 :default => false
