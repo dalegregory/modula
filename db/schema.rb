@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417001131) do
+ActiveRecord::Schema.define(:version => 20120417004245) do
 
   create_table "compartments_items", :force => true do |t|
     t.integer  "item_id"
@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(:version => 20120417001131) do
 
   add_index "compartments_items", ["compartment_type"], :name => "index_compartments_items_on_compartment_type"
   add_index "compartments_items", ["item_code"], :name => "index_compartments_items_on_item_code"
+
+  create_table "events", :force => true do |t|
+    t.datetime "operation_at"
+    t.integer  "compartment_reference"
+    t.integer  "order_line_reference"
+    t.decimal  "quantity_executed",                   :precision => 11, :scale => 3
+    t.integer  "quantity_requested"
+    t.integer  "reference"
+    t.string   "command",               :limit => 5
+    t.string   "item_code",             :limit => 50
+    t.string   "main_order_name",       :limit => 20
+    t.string   "order_name",            :limit => 20
+    t.string   "request_type",          :limit => 5
+    t.string   "sub_code_a",            :limit => 50
+    t.string   "sub_code_b",            :limit => 50
+    t.datetime "created_at",                                                         :null => false
+    t.datetime "updated_at",                                                         :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.string   "code",        :limit => 50,                   :null => false
