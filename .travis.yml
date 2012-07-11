@@ -9,7 +9,8 @@ env:
 
 before_script:
   - curl -Lo config/database.yml https://raw.github.com/gist/38c55d9ffaf6f9865949/database.yml
-  - RAILS_ENV=development bundle exec rake db:setup
+  - RAILS_ENV=development bundle exec rake db:setup stats
+  - bundle exec rails_best_practices --spec -x schema
 
 script:
-  - bundle exec rake spec
+  - bundle exec rspec spec
