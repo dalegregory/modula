@@ -20,3 +20,7 @@ script:
 
 notifications:
   email: false
+  campfire:
+    rooms: devfu:4db18c63e241de610c085c42ed4d3b06fb47b597@238549
+    on_success: always
+    on_failure: always
