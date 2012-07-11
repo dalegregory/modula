@@ -26,7 +26,7 @@ group :development, :test do
   gem 'hirb'
   gem 'pry'
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 2.8.0'
+  gem 'rspec-rails'
 end
 
 group :test do
