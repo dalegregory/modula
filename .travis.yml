@@ -12,7 +12,9 @@ bundler_args:
   
 before_script:
   - curl -Lo config/database.yml https://raw.github.com/gist/38c55d9ffaf6f9865949/database.yml
-  - RAILS_ENV=development bundle exec rake db:{setup,test:prepare} stats
+  - RAILS_ENV=development bundle exec rake db:setup
+  - RAILS_ENV=development bundle exec rake db:test:prepare
+  - RAILS_ENV=development bundle exec rake stats
   - bundle exec rails_best_practices --spec -x schema,devise,secret
 
 script:
