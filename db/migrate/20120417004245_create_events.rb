@@ -10,8 +10,8 @@ class CreateEvents < ActiveRecord::Migration
       t.integer  :reference
       t.string   :command,               limit: 5
       t.string   :item_code,             limit: 50
-      t.string   :main_order_name        limit: 20
-      t.string   :order_name             limit: 20
+      t.string   :main_order_name,       limit: 20
+      t.string   :order_name,            limit: 20
       t.string   :request_type,          limit: 5
       t.string   :sub_code_a,            limit: 50
       t.string   :sub_code_b,            limit: 50
