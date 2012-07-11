@@ -34,6 +34,7 @@ group :test do
   gem 'cover_me'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'rails_best_practices'
   gem 'syntax'
   gem 'validation_matcher'
 end
