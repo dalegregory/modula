@@ -8,7 +8,7 @@ env:
   - DB=mysql
 
 before_script:
-  - curl -Lo config/database.ci.yml https://raw.github.com/gist/38c55d9ffaf6f9865949/database.yml
+  - curl -Lo config/database.yml https://raw.github.com/gist/38c55d9ffaf6f9865949/database.yml
   - RAILS_ENV=development bundle exec rake db:setup
 
 script:
