@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.3'
+gem 'rails', '~> 3.2'
 
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.0'
@@ -24,8 +24,11 @@ end
 
 group :development, :test do
   gem 'hirb'
+  gem 'passenger'
   gem 'pry'
-  gem 'pry-nav'
+  gem 'pry-doc'
+  gem 'pry-debugger'
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
 
