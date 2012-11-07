@@ -34,7 +34,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'cover_me'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rails_best_practices'
