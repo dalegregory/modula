@@ -37,6 +37,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rails_best_practices'
+  gem 'simplecov'
   gem 'syntax'
   gem 'validation_matcher'
 end
