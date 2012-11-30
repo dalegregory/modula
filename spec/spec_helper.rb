@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'rails/application'
@@ -19,4 +22,8 @@ RSpec.configure do |config|
 
   config.include Devise::TestHelpers, :type => :controller
   config.include PermissionsMatcher,  :type => :request
+
+  config.before :each do
+    SimpleCov.command_name "RSpec:#{ Process.pid.to_s }#{ ENV['TEST_ENV_NUMBER'] }"
+  end
 end
