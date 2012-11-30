@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe CompartmentsItems do
 
-  its(:compartment_type) { should validate :presence }
-  its(:item_code)        { should validate :presence }
-  its(:operation)        { should validate :inclusion, { in: Modula::OPERATIONS }}
+  it { should validate(:presence).of :compartment_type }
+  it { should validate(:presence).of :item_code }
+  it { should validate(:inclusion).of(:operation).with in: Modula::OPERATIONS }
 
 end

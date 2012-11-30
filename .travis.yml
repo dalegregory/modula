@@ -1,0 +1,27 @@
+language: ruby
+
+rvm:
+  - 1.9.2
+  - 1.9.3
+
+env:
+  - DB=mysql
+
+bundler_args:
+  - --quiet
+  
+before_script:
+  - curl -Lo config/database.yml https://raw.github.com/gist/38c55d9ffaf6f9865949/database.yml
+  - bundle
+  - bundle exec rake db:setup stats
+  - bundle exec rails_best_practices --spec -x schema,devise,secret
+
+script:
+  - RAILS_ENV=test bundle exec rspec spec
+
+notifications:
+  email: false
+  campfire:
+    rooms: devfu:4db18c63e241de610c085c42ed4d3b06fb47b597@238549
+    on_success: always
+    on_failure: always
