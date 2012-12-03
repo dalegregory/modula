@@ -33,6 +33,7 @@ module Modula
   class Application < Rails::Application
     config.active_record.whitelist_attributes = true
     config.assets.enabled                     = true
+    config.assets.initialize_on_precompile    = false
     config.assets.version                     = '1.0'
     config.autoload_paths                    += %W[ #{ config.root }/lib ]
     config.encoding                           = 'utf-8'
