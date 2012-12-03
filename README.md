@@ -43,7 +43,7 @@ When an order is received, the following steps occur:
     "items_attributes": [
       {
         "compartment_type": "something-arbitrary",
-        "description": "describe-this-item,
+        "description": "describe-this-item",
         "item_code": "a unique identifier for this item",
         "notes": "fragile",
         "quantity_requested": "10",
@@ -52,7 +52,7 @@ When an order is received, the following steps occur:
       },
       {
         "compartment_type": "something-arbitrary",
-        "description": "describe-this-different-item,
+        "description": "describe-this-different-item",
         "item_code": "a unique identifier for this item",
         "notes": "tasty",
         "quantity_requested": "100",
