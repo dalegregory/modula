@@ -11,7 +11,7 @@ class OrderItem < ActiveRecord::Base
                   :order_type,
                   :quantity_requested,
                   :sub_code_a,
-                  :sub_code_b
+                  :sub_code_b, as: [:default, :admin]
 
   belongs_to :order
 

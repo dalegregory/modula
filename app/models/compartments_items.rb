@@ -7,7 +7,7 @@ class CompartmentsItems < ActiveRecord::Base
                   :height,
                   :item_code,
                   :operation,
-                  :quantity_limit
+                  :quantity_limit, as: [:default, :admin]
 
   belongs_to :item
 
