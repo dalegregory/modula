@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
                   :error,
                   :items_attributes,
                   :name,
-                  :operation
+                  :operation, as: [:default, :admin]
 
   has_many :items,    class_name: 'OrderItem'
   has_many :outcomes, class_name: 'OrderOutcome'

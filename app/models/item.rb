@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 
   attr_accessible :code,
                   :description,
-                  :operation
+                  :operation, as: [:default, :admin]
 
   has_many :compartments_items, class_name: 'CompartmentsItems'
 
