@@ -2,15 +2,15 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2'
 
+gem 'bootstrap-sass', '~> 2.0.4'
 gem 'devise'
-gem 'bootstrap-sass', '~> 2.0'
 gem 'dynamic_form'
 gem 'haml-rails'
-gem 'jquery-rails'
-gem 'rails_admin',    git: 'git://github.com/sferik/rails_admin.git'
+gem 'jquery-rails',   '2.1.3'
+gem 'mysql2'
+gem 'rails_admin'
 gem 'redcarpet'
 gem 'sass-rails',     '~> 3.2.3'
-gem 'mysql2'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
@@ -33,7 +33,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara',             '~> 1.1'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rails_best_practices'
