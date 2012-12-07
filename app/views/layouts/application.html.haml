@@ -11,7 +11,7 @@
       Modula
       = yield :title
 
-  %body{ class: Rails.env }
+  %body{ data: { environment: Rails.env, branch: DEPLOYED_GIT_BRANCH, revision: DEPLOYED_GIT_REVISION }}
     %header
       = yield :header
 

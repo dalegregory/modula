@@ -2,8 +2,21 @@ body
   border-top: 8px solid red
   padding: 2em
 
-  &.production
-    border-top: none
+  &[data-environment='test']
+    .navbar
+      border-bottom: 8px solid #e70031
+
+  &[data-environment='development']
+    .navbar
+      border-bottom: 8px solid #2153e7
+
+  &[data-environment='staging']
+    .navbar
+      border-bottom: 8px solid #ffd818
+
+  &[data-environment='production']
+    .navbar
+      border-bottom: none
 
 form
 
