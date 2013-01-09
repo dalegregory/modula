@@ -1,6 +1,7 @@
 *.sqlite*
 *.sw*
 .DS_Store
+.rvmrc
 ._*
 config/database.yml
 config/deploy.rb
