@@ -1,5 +1,5 @@
-Modula
-======
+Modula [![build status][status-image]][ci]
+==========================================
 
 About
 -----
@@ -92,5 +92,11 @@ Tools
 
 These are some of the tools we're using as a convention in this project
 
-RSpec:: We use this for all of our testing.  http://rspec.info
-Factory Girl:: This is used for easily creating models from tests.  http://github.com/thoughtbot/factory_girl
+- RSpec:: We use this for all of our testing. http://rspec.info
+- Factory Girl:: This is used for easily creating models from tests. http://github.com/thoughtbot/factory_girl
+
+<!-- links -->
+[ci]: http://travis-ci.org/devfu/modula "build status"
+
+<!-- images -->
+[status-image]: https://secure.travis-ci.org/devfu/modula.png?branch=master
