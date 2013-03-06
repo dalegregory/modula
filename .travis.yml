@@ -1,0 +1,20 @@
+language: ruby
+
+rvm:
+  - 1.9.2
+  - 1.9.3
+
+env:
+  - DB=mysql
+
+bundler_args:
+  - --quiet
+  
+before_script:
+  - curl -Lo config/database.yml http://git.io/YLiX3g
+  - bundle
+  - bundle exec rake db:setup stats
+  - bundle exec rails_best_practices --spec -x schema,devise,secret
+
+script:
+  - RAILS_ENV=test bundle exec rspec spec
