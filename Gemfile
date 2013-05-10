@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2'
+gem 'rails', '3.2.12'
 
 gem 'bootstrap-sass', '~> 2.0.4'
 gem 'devise'
@@ -18,8 +18,8 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano'
-  gem 'capistrano-ext'
+  gem 'streamline_development', github: 'devfu/streamline_meta'
+  gem 'streamline_deploy',      github: 'devfu/streamline_meta'
 end
 
 group :development, :test do
