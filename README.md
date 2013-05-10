@@ -87,6 +87,16 @@ Testing
 * Specs are organized into Models & Request specs (/spec/models, /spec/request)
 * Model Factories are located in /spec/factories.rb
 
+Deploy
+------
+
+Deploys are handled by capistrano.
+
+    $ cap ENV deploy:setup
+    $ cap ENV deploy:check
+    # satisfy dependencies
+    $ cap ENV deploy:cold
+
 Tools
 -----
 
